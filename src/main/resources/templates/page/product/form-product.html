@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form product</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+    
+    <div th:replace="fragment/header :: header"></div>
+
+    <div th:replace="fragment/header :: nav"></div>
+
+    <form  th:action="@{/products}" th:object="${product}" method="POST">
+        <input type="text" th:field="*{productCode}" name="code" id="">
+
+        <input type="text" th:field="*{productName}" name="name" id="">
+
+        <button type="submit">add</button>
+    </form>
+
+    <br>
+    <div th:replace="fragment/header :: footer"></div>
+</body>
+</html>

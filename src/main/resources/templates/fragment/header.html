@@ -1,0 +1,20 @@
+
+
+<header th:fragment="header">
+    Ini adalah header halaman
+
+    <h3><a th:href="@{/products}">Utama</a></h3>
+</header>
+
+<nav th:fragment="nav">
+    <ol>
+        <li><a th:href="@{/products/form}">form</a></li>
+        <li>Menu 2</li>
+        <li>Menu 3</li>
+    </ol>
+</nav>
+
+
+<footer th:fragment="footer">
+    Ini Footer
+</footer>
