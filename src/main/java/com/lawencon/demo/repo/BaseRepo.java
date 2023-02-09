@@ -37,17 +37,18 @@ public class BaseRepo {
         return objFind;
     }
 
-    @SuppressWarnings("unnchecked")
+    @SuppressWarnings("unchecked")
     public <T> List<T> getAll(Class<T> clazz, Integer page,Integer limit){
         StringBuilder hql = new StringBuilder();
 
         String className = clazz.getSimpleName();
         String classNameLower = className.toLowerCase();
 
-        int first = limit * (page - 1);
+        int first = (limit == null)? 0 : limit * (page - 1);
 
         hql.append("SELECT ")
                 .append(classNameLower)
+                .append(" ")
                 .append("FROM ")
                 .append(className).append(" ")
                 .append(classNameLower);
@@ -70,7 +71,7 @@ public class BaseRepo {
         String classNameLower = className.toLowerCase();
 
         hql.append("SELECT ")
-                .append(classNameLower)
+                .append(classNameLower).append(" ")
                 .append("FROM ")
                 .append(className).append(" ")
                 .append(classNameLower);

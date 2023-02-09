@@ -9,20 +9,19 @@
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
-    
     <div th:replace="fragment/header :: header"></div>
 
-    <div th:replace="fragment/header :: nav"></div>
+    <div th:replace="fragment/navigation :: nav"></div>
 
     <form  th:action="@{/products}" th:object="${product}" method="POST">
-        <input type="text" th:field="*{productCode}" name="code" id="">
+        <input type="text" th:field="*{productCode}">
 
-        <input type="text" th:field="*{productName}" name="name" id="">
+        <input type="text" th:field="*{productName}">
 
         <button type="submit">add</button>
     </form>
 
     <br>
-    <div th:replace="fragment/header :: footer"></div>
+    <div th:replace="fragment/footer :: footer"></div>
 </body>
 </html>

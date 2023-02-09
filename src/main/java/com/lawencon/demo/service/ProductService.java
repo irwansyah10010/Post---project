@@ -2,6 +2,8 @@ package com.lawencon.demo.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import com.lawencon.demo.dto.BaseInsertRes;
 import com.lawencon.demo.dto.BaseListRes;
 import com.lawencon.demo.dto.BaseUpdateOrDeleteRes;
@@ -28,6 +30,7 @@ public class ProductService {
         return baseListRes;
     }
 
+    @Transactional(rollbackOn = Exception.class)
     public BaseInsertRes save(Product product){
         BaseInsertRes baseInsertRes = new BaseInsertRes();
 
@@ -86,5 +89,4 @@ public class ProductService {
 
         return baseUpdateOrDeleteRes;
     }
-
 }

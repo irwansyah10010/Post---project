@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ini halaman</title>
 
-    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="@{css/style.css}">
 </head>
 <body>
-    <div th:replace="fragment/header :: header"></div>
+   <div th:replace="fragment/navigation :: nav"></div>
 
-    <div th:replace="fragment/header :: nav"></div>
-
-    <h1>Halo</h1>
+    <h2>Product List</h2>
+    <a th:href="@{ products/add }">Add</a>
     <table>
         <thead>
             <th>id</th>
@@ -28,8 +27,7 @@
             </tr>
         </tbody>
     </table>
-
     <br>
-    <div th:replace="fragment/header :: footer"></div>
+   <div th:replace="fragment/footer :: footer"></div>
 </body>
 </html>
